@@ -20,6 +20,9 @@ public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Version
+    @Column(name = "version")
+    private Integer version;
     @Column(name = "name")
     private String name;
     @Column(name = "full_name")

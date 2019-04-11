@@ -15,6 +15,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Version
+    @Column(name = "version")
+    private Integer version;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "second_name")

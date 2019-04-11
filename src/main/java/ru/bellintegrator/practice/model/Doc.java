@@ -13,6 +13,9 @@ public class Doc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Version
+    @Column(name = "version")
+    private Integer version;
     @Column(name = "code")
     private Integer code;
     @Column(name = "name")

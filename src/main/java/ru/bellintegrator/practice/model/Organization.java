@@ -37,7 +37,7 @@ public class Organization {
     private String address;
     @Column(name = "phone")
     @Size(min = 5, max = 20)
-    private Integer phone;
+    private String phone;
     @Column(name = "is_active")
     private Boolean isActive;
 
@@ -92,11 +92,11 @@ public class Organization {
         this.address = address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -129,7 +129,7 @@ public class Organization {
         this.isActive = isActive;
     }
 
-    public Organization(String name, String fullName, Integer inn, Integer kpp, String address, Integer phone, Boolean isActive) {
+    public Organization(String name, String fullName, Integer inn, Integer kpp, String address, String phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

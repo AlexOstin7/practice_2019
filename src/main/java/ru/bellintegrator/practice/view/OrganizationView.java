@@ -23,7 +23,7 @@ public class OrganizationView {
 
     private String address;
 
-    private Integer phone;
+    private String phone;
 
     public Boolean isActive;
 
@@ -75,11 +75,11 @@ public class OrganizationView {
         this.address = address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -101,7 +101,7 @@ public class OrganizationView {
         this.isActive = isActive;
     }
 
-    public OrganizationView(String name, String fullName, Integer inn, Integer kpp, String address, Integer phone, Boolean isActive) {
+    public OrganizationView(String name, String fullName, Integer inn, Integer kpp, String address, String phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

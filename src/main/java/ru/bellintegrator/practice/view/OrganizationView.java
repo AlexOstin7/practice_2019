@@ -19,7 +19,7 @@ public class OrganizationView {
 
     private String inn;
 
-    private Integer kpp;
+    private String kpp;
 
     private String address;
 
@@ -59,11 +59,11 @@ public class OrganizationView {
         this.inn = inn;
     }
 
-    public Integer getKpp() {
+    public String getKpp() {
         return kpp;
     }
 
-    public void setKpp(Integer kpp) {
+    public void setKpp(String kpp) {
         this.kpp = kpp;
     }
 
@@ -101,7 +101,7 @@ public class OrganizationView {
         this.isActive = isActive;
     }
 
-    public OrganizationView(String name, String fullName, String inn, Integer kpp, String address, String phone, Boolean isActive) {
+    public OrganizationView(String name, String fullName, String inn, String kpp, String address, String phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

@@ -32,7 +32,7 @@ public class Organization {
     private String inn;
     @Column(name = "kpp")
     @Size(min = 9, max = 9)
-    private Integer kpp;
+    private String kpp;
     @Column(name = "address")
     private String address;
     @Column(name = "phone")
@@ -76,11 +76,11 @@ public class Organization {
         this.inn = inn;
     }
 
-    public int getKpp() {
+    public String getKpp() {
         return kpp;
     }
 
-    public void setKpp(int kpp) {
+    public void setKpp(String kpp) {
         this.kpp = kpp;
     }
 
@@ -109,19 +109,11 @@ public class Organization {
     }
 
     public void removeOffice(Office office) {
-        //offices.remove(office);
         office.setOrganization(null);
-
     }
 
     public Organization() {
-        /*offices = new ArrayList<Office>();*/
     }
-
-  /*  public Organization(String name, Integer inn) {
-        this.name = name;
-        this.inn = inn;
-    }*/
 
     public Organization(String name, String inn, Boolean isActive) {
         this.name = name;
@@ -129,7 +121,7 @@ public class Organization {
         this.isActive = isActive;
     }
 
-    public Organization(String name, String fullName, String inn, Integer kpp, String address, String phone, Boolean isActive) {
+    public Organization(String name, String fullName, String inn, String kpp, String address, String phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

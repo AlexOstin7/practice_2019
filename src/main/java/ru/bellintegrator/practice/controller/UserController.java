@@ -18,7 +18,7 @@ public interface UserController {
 
     Response filterUsers(@RequestBody UserFilterView user);
 
-    Response getUserById(@PathVariable("id") Long id) ;
+    Response getUserById(@PathVariable("id") Integer id) ;
 
     Response loadDocs(@PathVariable("id") Integer id);
 

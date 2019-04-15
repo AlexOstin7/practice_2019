@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserView getUserById(Long id) {
+    public UserView getUserById(Integer id) {
         log.info("before service getId " + id);
         User user = dao.loadById(id);
 
@@ -145,12 +145,12 @@ public class UserServiceImpl implements UserService {
         if (view.getId() == null || view.firstName == null || view.secondName == null || view.middleName == null || view.phone == null || view.officeId == null || view.possition == null || view.docId == null || view.docId == null || view.docDate == null || view.docCode == null || view.citizenshipId == null || view.citizenshipName == null || view.citizenshipCode == null || view.isIdentified == null) {
             throw new CustomErrorException("Service says Mismatch one ore more parametr(s)- null  ");
         }
-        if (Long.valueOf(view.getId()) < 1) {
+        if (Integer.valueOf(view.getId()) < 1) {
             throw new CustomErrorException(String.format("Service says Mismatch parametr- Id* is %s", view.getId()));
         }
         log.info("before service update docId in User" + view.toString());
 
-        User user = dao.loadById(Long.valueOf(view.getId()));
+        User user = dao.loadById(Integer.valueOf(view.getId()));
 
         if (user == null) {
             throw new CustomErrorException(String.format("Service says Mismatch parametr- Id* is %s", view.getId()));
@@ -179,10 +179,10 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void deleteUser(UserView view) {
         log.info("delete-view 1 " + view.toString());
-        if (view.getId().isEmpty()|| (Long.valueOf(view.getId()) < 1)) {
+        if (view.getId().isEmpty()|| (Integer.valueOf(view.getId()) < 1)) {
             throw new CustomErrorException("Mismatch parameter- Id is empty" + view.getId().toString());
         }
-        User user = dao.loadById(Long.valueOf(view.getId()));
+        User user = dao.loadById(Integer.valueOf(view.getId()));
         log.info("delete-view 2" + view.toString());
         if (user == null  ) {
             throw new CustomErrorException("Mismatch parameter- Id is " );
@@ -197,7 +197,7 @@ public class UserServiceImpl implements UserService {
         if (view.getOfficeId() == null) {
             throw new CustomErrorException("Mismatch parameter- officeId is null ");
         }
-        if ((Long.valueOf(view.getOfficeId()) < 1) ) {
+        if ((Integer.valueOf(view.getOfficeId()) < 1) ) {
             throw new CustomErrorException("Mismatch parameter- officeId is " + view.getOfficeId().toString());
         }
         User user = new User();
@@ -219,7 +219,7 @@ public class UserServiceImpl implements UserService {
         user.setPossition(view.possition);
         user.setDocDate(view.docDate);
         user.setDocNumber(view.docNumber);
-        Office office = dao.loadOfficeById(Long.valueOf(view.getOfficeId()));
+        Office office = dao.loadOfficeById(Integer.valueOf(view.getOfficeId()));
         log.info("user service addUser office " + office.toString());
 
         user.setOffice(office);

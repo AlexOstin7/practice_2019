@@ -18,7 +18,7 @@ public class Office {
     private static final long serialVersionUID = -123452797979679L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Version
     @Column(name = "version")
     private Integer version;
@@ -43,14 +43,14 @@ public class Office {
     public Office(String name, String address, Integer phone, Boolean isActive) {
     }
 
-    public Office(String name, String address, Integer phone, Boolean isActive, Long orgId) {
+    public Office(String name, String address, Integer phone, Boolean isActive, Integer orgId) {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

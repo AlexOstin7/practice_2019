@@ -1,7 +1,7 @@
 package ru.bellintegrator.practice.service.impl;
 
 import com.google.common.base.Strings;
-import com.google.common.primitives.Longs;
+//import com.google.common.primitives.Integers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +56,7 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     @Transactional(readOnly = true)
-    public OrganizationView getOrganizationById(Long id) {
+    public OrganizationView getOrganizationById(Integer id) {
         log.info("getId {} " + id);
         if (id < 1) {
             throw new CustomErrorException(String.format("Неверное ID организации %s", id));
@@ -88,7 +88,7 @@ public class OrganizationServiceImpl implements OrganizationService {
         if (Integer.valueOf(view.getId()) < 1) {
             throw new CustomErrorException(String.format("Неверное ID организации %s", view.getId()));
         }
-        Organization organization = dao.loadById(Long.valueOf(view.getId()));
+        Organization organization = dao.loadById(Integer.valueOf(view.getId()));
         if (organization == null) {
             throw new CustomErrorException(String.format("Не найдена организация с ID %s", view.getId()));
         }

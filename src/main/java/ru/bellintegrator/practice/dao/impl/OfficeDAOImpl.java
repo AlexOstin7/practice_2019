@@ -25,7 +25,7 @@ public class OfficeDAOImpl implements OfficeDAO {
     }
 
     @Override
-    public Office loadById(Long id) {
+    public Office loadById(Integer id) {
             return   em.find(Office.class, id);
     }
 
@@ -42,7 +42,7 @@ public class OfficeDAOImpl implements OfficeDAO {
 
 
     @Override
-    public Office loadByName(String name, Long inn, Boolean isActive) {
+    public Office loadByName(String name, Integer inn, Boolean isActive) {
         return em.find(Office.class, name);
     }
 

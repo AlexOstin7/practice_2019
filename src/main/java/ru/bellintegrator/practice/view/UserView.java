@@ -23,7 +23,7 @@ public class UserView {
 
     public Boolean isIdentified;
 
-    public Long officeId;
+    public Integer officeId;
 
     public Integer docId;
 
@@ -109,11 +109,11 @@ public class UserView {
         isIdentified = identified;
     }
 
-    public Long getOfficeId() {
+    public Integer getOfficeId() {
         return officeId;
     }
 
-    public void setOfficeId(Long officeId) {
+    public void setOfficeId(Integer officeId) {
         this.officeId = officeId;
     }
 

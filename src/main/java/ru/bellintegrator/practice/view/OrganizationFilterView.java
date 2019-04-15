@@ -5,7 +5,7 @@ public class OrganizationFilterView {
 
     public String name;
 
-    public Long inn;
+    public Integer inn;
 
     public Boolean isActive;
 
@@ -17,11 +17,11 @@ public class OrganizationFilterView {
         this.name = name;
     }
 
-    public Long getInn() {
+    public Integer getInn() {
         return inn;
     }
 
-    public void setInn(Long inn) {
+    public void setInn(Integer inn) {
         this.inn = inn;
     }
 
@@ -37,7 +37,7 @@ public class OrganizationFilterView {
 
     }
 
-    public OrganizationFilterView(String name, Long inn, Boolean isActive) {
+    public OrganizationFilterView(String name, Integer inn, Boolean isActive) {
         this.name = name;
         this.inn = inn;
         this.isActive = isActive;

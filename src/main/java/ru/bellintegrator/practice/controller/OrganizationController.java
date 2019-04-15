@@ -12,7 +12,7 @@ public interface OrganizationController {
 
     Response updateOrganizaton(@RequestBody OrganizationView organization);
 
-    Response getOrganizationById(@PathVariable("id") Long id) ;
+    Response getOrganizationById(@PathVariable("id") Integer id) ;
 
     Response filterOrganizations(@RequestBody OrganizationFilterView organization);
 

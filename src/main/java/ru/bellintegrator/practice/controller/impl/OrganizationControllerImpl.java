@@ -41,7 +41,7 @@ public class OrganizationControllerImpl implements OrganizationController {
     }
     @Override
     @RequestMapping(value =  {"/organization", "/organization/{id}"}, method = {GET})
-    public Response getOrganizationById(@PathVariable(value="id",required = false) Long id) {
+    public Response getOrganizationById(@PathVariable(value="id",required = false) Integer id) {
         log.info("id {} " + id);
         if (id == null) {
             throw new CustomErrorException("Не заполнено обязательное поле Id* ");

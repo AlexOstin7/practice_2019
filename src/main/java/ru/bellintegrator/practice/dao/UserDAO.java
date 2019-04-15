@@ -20,7 +20,7 @@ public interface UserDAO {
      * @param id
      * @return
      */
-    User loadById(Long id);
+    User loadById(Integer id);
 
     /**
      * Получить User по имени
@@ -36,7 +36,7 @@ public interface UserDAO {
      * @param name, inn, isActive
      * @return
      */
-    User loadByName(String name, Long inn, Boolean isActive);
+    User loadByName(String name, Integer inn, Boolean isActive);
 
 
 
@@ -73,6 +73,6 @@ public interface UserDAO {
 
     Doc loadDocById(Integer id);
 
-    Office loadOfficeById(Long id);
+    Office loadOfficeById(Integer id);
 
 }

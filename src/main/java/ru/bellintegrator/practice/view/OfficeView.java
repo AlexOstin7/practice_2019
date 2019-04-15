@@ -21,7 +21,7 @@ public class OfficeView {
 
     private Boolean isActive;
 
-    private Long orgId;
+    private Integer orgId;
 
     public String getId() {
         return id;
@@ -63,18 +63,18 @@ public class OfficeView {
         this.isActive = isActive;
     }
 
-    public Long getOrgId() {
+    public Integer getOrgId() {
         return orgId;
     }
 
-    public void setOrgId(Long orgId) {
+    public void setOrgId(Integer orgId) {
         this.orgId = orgId;
     }
 
     public OfficeView() {
     }
 
-    public OfficeView(String name, String address, Integer phone, Boolean isActive, Long orgId) {
+    public OfficeView(String name, String address, Integer phone, Boolean isActive, Integer orgId) {
         this.name = name;
         this.address = address;
         this.phone = phone;

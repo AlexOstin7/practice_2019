@@ -17,7 +17,7 @@ public class OrganizationView {
 
     private String fullName;
 
-    private Long inn;
+    private Integer inn;
 
     private Integer kpp;
 
@@ -51,11 +51,11 @@ public class OrganizationView {
         this.fullName = fullName;
     }
 
-    public Long getInn() {
+    public Integer getInn() {
         return inn;
     }
 
-    public void setInn(Long inn) {
+    public void setInn(Integer inn) {
         this.inn = inn;
     }
 
@@ -95,13 +95,13 @@ public class OrganizationView {
 
     }
 
-    public OrganizationView(String name, Long inn, Boolean isActive) {
+    public OrganizationView(String name, Integer inn, Boolean isActive) {
         this.name = name;
         this.inn = inn;
         this.isActive = isActive;
     }
 
-    public OrganizationView(String name, String fullName, Long inn, Integer kpp, String address, Integer phone, Boolean isActive) {
+    public OrganizationView(String name, String fullName, Integer inn, Integer kpp, String address, Integer phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

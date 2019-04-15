@@ -20,7 +20,7 @@ public interface OfficeDAO {
      * @param id
      * @return
      */
-    Office loadById(Long id);
+    Office loadById(Integer id);
 
     /**
      * Получить Office по имени
@@ -36,7 +36,7 @@ public interface OfficeDAO {
      * @param name, inn, isActive
      * @return
      */
-    Office loadByName(String name, Long inn, Boolean isActive);
+    Office loadByName(String name, Integer inn, Boolean isActive);
 
 
 

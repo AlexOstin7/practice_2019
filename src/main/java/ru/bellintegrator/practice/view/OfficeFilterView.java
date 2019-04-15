@@ -14,7 +14,7 @@ public class OfficeFilterView {
 
     private Boolean isActive;
 
-    private Long orgId;
+    private Integer orgId;
 
     public OfficeFilterView() {
     }
@@ -39,7 +39,7 @@ public class OfficeFilterView {
         return isActive;
     }
 
-    public Long getOrgId() {
+    public Integer getOrgId() {
         return orgId;
     }
 
@@ -55,7 +55,7 @@ public class OfficeFilterView {
         isActive = isActive;
     }
 
-    public void setOrgId(Long orgId) {
+    public void setOrgId(Integer orgId) {
         this.orgId = orgId;
     }
 

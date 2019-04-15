@@ -19,7 +19,7 @@ public class Organization {
     private static final long serialVersionUID = -123451868897895L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Version
     @Column(name = "version")
     private Integer version;
@@ -28,7 +28,7 @@ public class Organization {
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "inn")
-    private Long inn;
+    private Integer inn;
     @Column(name = "kpp")
     private Integer kpp;
     @Column(name = "address")
@@ -41,11 +41,11 @@ public class Organization {
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Office> offices;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -65,11 +65,11 @@ public class Organization {
         this.fullName = fullName;
     }
 
-    public Long getInn() {
+    public Integer getInn() {
         return inn;
     }
 
-    public void setInn(Long inn) {
+    public void setInn(Integer inn) {
         this.inn = inn;
     }
 
@@ -115,18 +115,18 @@ public class Organization {
         /*offices = new ArrayList<Office>();*/
     }
 
-  /*  public Organization(String name, Long inn) {
+  /*  public Organization(String name, Integer inn) {
         this.name = name;
         this.inn = inn;
     }*/
 
-    public Organization(String name, Long inn, Boolean isActive) {
+    public Organization(String name, Integer inn, Boolean isActive) {
         this.name = name;
         this.inn = inn;
         this.isActive = isActive;
     }
 
-    public Organization(String name, String fullName, Long inn, Integer kpp, String address, Integer phone, Boolean isActive) {
+    public Organization(String name, String fullName, Integer inn, Integer kpp, String address, Integer phone, Boolean isActive) {
         this.name = name;
         this.fullName = fullName;
         this.inn = inn;

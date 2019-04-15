@@ -11,7 +11,7 @@ public interface OfficeController {
 
     Response offices();
 
-    Response getOfficeById(@PathVariable("id") Long id) ;
+    Response getOfficeById(@PathVariable("id") Integer id) ;
 
     Response filterOffices(@RequestBody OfficeFilterView office);
 

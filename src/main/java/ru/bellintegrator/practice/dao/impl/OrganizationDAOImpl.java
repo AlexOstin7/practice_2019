@@ -57,7 +57,7 @@ public class OrganizationDAOImpl implements OrganizationDAO {
     }
 
     @Override
-    public Organization loadById(Long id) {
+    public Organization loadById(Integer id) {
         return em.find(Organization.class, id);
     }
 

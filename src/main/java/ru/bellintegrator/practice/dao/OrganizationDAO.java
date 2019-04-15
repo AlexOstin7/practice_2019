@@ -16,7 +16,7 @@ public interface OrganizationDAO {
      * @param id
      * @return
      */
-    Organization loadById(Long id);
+    Organization loadById(Integer id);
 
     /**
      * Получить Organization по имени

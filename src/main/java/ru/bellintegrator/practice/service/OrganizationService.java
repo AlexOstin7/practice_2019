@@ -17,7 +17,7 @@ public interface OrganizationService {
 
     List<OrganizationFilterView> filterOrganizationList(OrganizationFilterView organizationFilterView);
 
-    OrganizationView getOrganizationById(Long id);
+    OrganizationView getOrganizationById(Integer id);
 
     void add(OrganizationView organization);
 

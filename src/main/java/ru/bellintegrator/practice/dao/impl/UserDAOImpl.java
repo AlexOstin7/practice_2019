@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
 
 
     @Override
-    public User loadById(Long id) {
+    public User loadById(Integer id) {
         if (id > 0 ) {
             return   em.find(User.class, id);
 
@@ -73,7 +73,7 @@ public class UserDAOImpl implements UserDAO {
 
 
     @Override
-    public User loadByName(String name, Long inn, Boolean isActive) {
+    public User loadByName(String name, Integer inn, Boolean isActive) {
         return em.find(User.class, name);
     }
 
@@ -165,7 +165,7 @@ public class UserDAOImpl implements UserDAO {
         query.select(docs).where(cb.equal(countryRoot.get("id"), id));
 /*
 // count books written by an author
-        Subquery sub = cq.subquery(Long.class);
+        Subquery sub = cq.subquery(Integer.class);
         Root subRoot = sub.from(Doc.class);
         //SetJoin<Doc, User> subAuthors = subRoot.join(User_,);
         Join<User,Doc> joinDoc = doc.join( User_.users);
@@ -199,7 +199,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public Office loadOfficeById(Long id) {
+    public Office loadOfficeById(Integer id) {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<Office> criteria = builder.createQuery(Office.class);
 

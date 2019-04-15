@@ -39,7 +39,7 @@ public class OfficeControllerImpl implements OfficeController {
 
     @Override
     @RequestMapping(value = "/office/{id}", method = {GET})
-    public Response getOfficeById(@PathVariable(value = "id") Long id) {
+    public Response getOfficeById(@PathVariable(value = "id") Integer id) {
         log.info("controller before service.getOfficeByID "+ id.toString());
         Office office = officeService.getOfficeById(id);
         log.info("controller after service.getOfficeByID "+ id.toString() + " office - " + office.toString());

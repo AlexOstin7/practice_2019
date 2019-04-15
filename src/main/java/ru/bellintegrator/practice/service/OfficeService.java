@@ -16,7 +16,7 @@ public interface OfficeService {
 
     List<OfficeView> offices();
 
-    Office getOfficeById(Long id);
+    Office getOfficeById(Integer id);
 
     List<OfficeFilterView> filterOfficeList(OfficeFilterView office);
 

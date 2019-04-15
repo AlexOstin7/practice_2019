@@ -45,7 +45,7 @@ public class UserControllerImpl implements UserController {
     }
     @Override
     @RequestMapping(value = "/user/{id}", method = {GET})
-    public Response getUserById(@PathVariable(value = "id") Long id) {
+    public Response getUserById(@PathVariable(value = "id") Integer id) {
         log.info("controller before service.getUserByID "+ id.toString());
         UserView user = userService.getUserById(id);
         log.info("controller after service.getUserByID "+ id.toString() + " user - " + user.toString());

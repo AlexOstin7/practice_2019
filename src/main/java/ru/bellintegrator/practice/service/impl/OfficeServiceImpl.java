@@ -82,7 +82,7 @@ public class OfficeServiceImpl implements OfficeService {
 
     @Override
     @Transactional(readOnly = true)
-    public Office getOfficeById(Long id) {
+    public Office getOfficeById(Integer id) {
         log.info("before service getId " + id);
         Office office = dao.loadById(id);
 
@@ -132,11 +132,11 @@ public class OfficeServiceImpl implements OfficeService {
         if (view.getId() == null || view.getActive() == null || view.getAddress() == null || view.getName() == null || view.getPhone() == null || view.getOrgId() == null) {
             throw new CustomErrorException("Service says Mismatch one ore more parametr(s)- null  ");
         }
-        if (Long.valueOf(view.getId()) < 1) {
+        if (Integer.valueOf(view.getId()) < 1) {
             throw new CustomErrorException(String.format("Service says Mismatch parametr- Id* is %s", view.getId()));
         }
         log.info("before service update ID" + view.toString());
-        Office office = dao.loadById(Long.valueOf(view.getId()));
+        Office office = dao.loadById(Integer.valueOf(view.getId()));
         if (office == null) {
             throw new CustomErrorException(String.format("Service says Mismatch parametr- Id* is %s", view.getId()));
         }
@@ -158,9 +158,9 @@ public class OfficeServiceImpl implements OfficeService {
         if (view.getId().isEmpty()) {
             throw new CustomErrorException("Mismatch parameter- Id is empty");
         }
-        Office office = dao.loadById(Long.valueOf(view.getId()));
+        Office office = dao.loadById(Integer.valueOf(view.getId()));
         log.info("delete-view 2" + view.toString());
-        if (office == null || (Long.valueOf(view.getId()) < 1) ) {
+        if (office == null || (Integer.valueOf(view.getId()) < 1) ) {
             throw new CustomErrorException("Mismatch parameter- Id is " + view.getId().toString());
         }
 
@@ -178,7 +178,7 @@ public class OfficeServiceImpl implements OfficeService {
         if (view.getOrgId() == null) {
             throw new CustomErrorException("Mismatch parameter- orgId is null ");
         }
-        if ((Long.valueOf(view.getOrgId()) < 1) ) {
+        if ((Integer.valueOf(view.getOrgId()) < 1) ) {
             throw new CustomErrorException("Mismatch parameter- orgId is " + view.getOrgId().toString());
         }
 

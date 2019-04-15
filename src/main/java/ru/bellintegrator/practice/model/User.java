@@ -26,7 +26,7 @@ public class User {
     @NotNull
     private String possition;
     @Column(name = "doc_number")
-    private Integer docNumber;
+    private String docNumber;
     @Column(name = "doc_date")
     private Date docDate;
     @Column(name = "phone")
@@ -86,11 +86,11 @@ public class User {
         this.possition = possition;
     }
 
-    public Integer getDocNumber() {
+    public String getDocNumber() {
         return docNumber;
     }
 
-    public void setDocNumber(Integer docNumber) {
+    public void setDocNumber(String docNumber) {
         this.docNumber = docNumber;
     }
 

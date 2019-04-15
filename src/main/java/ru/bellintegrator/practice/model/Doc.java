@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "doc")
 public class Doc {
-    private static final long serialVersionUID = -123454646464L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

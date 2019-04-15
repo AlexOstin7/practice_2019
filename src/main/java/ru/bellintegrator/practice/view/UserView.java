@@ -17,7 +17,7 @@ public class UserView {
 
     public Integer phone;
 
-    public Integer docNumber;
+    public String docNumber;
 
     public Date docDate;
 
@@ -85,11 +85,11 @@ public class UserView {
         this.phone = phone;
     }
 
-    public Integer getDocNumber() {
+    public String getDocNumber() {
         return docNumber;
     }
 
-    public void setDocNumber(Integer docNumber) {
+    public void setDocNumber(String docNumber) {
         this.docNumber = docNumber;
     }
 

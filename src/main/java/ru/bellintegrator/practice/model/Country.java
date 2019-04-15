@@ -1,15 +1,11 @@
 package ru.bellintegrator.practice.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "country")
 public class Country {
-    private static final long serialVersionUID = -123455L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

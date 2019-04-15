@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,6 +32,7 @@ public class User {
     @Column(name = "doc_date")
     private Date docDate;
     @Column(name = "phone")
+    @Size(min = 5, max = 20)
     private Integer phone;
     @Column(name = "is_identified")
     private Boolean isIdentified;

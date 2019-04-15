@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS organization (
     kpp         VARCHAR(9)  NOT NULL,
     address     VARCHAR(250) NOT NULL,
     phone       VARCHAR(20),
-    is_active   BOOLEAN
+    is_active   BOOLEAN,
+    CONSTRAINT inn UNIQUE (inn)
 );
 
 CREATE TABLE IF NOT EXISTS office (

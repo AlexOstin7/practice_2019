@@ -28,12 +28,15 @@ public class Organization {
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "inn")
+    @Size(min = 12, max = 12)
     private Integer inn;
     @Column(name = "kpp")
+    @Size(min = 9, max = 9)
     private Integer kpp;
     @Column(name = "address")
     private String address;
     @Column(name = "phone")
+    @Size(min = 5, max = 20)
     private Integer phone;
     @Column(name = "is_active")
     private Boolean isActive;

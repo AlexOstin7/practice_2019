@@ -33,7 +33,7 @@ public class UserView {
 
     public Integer citizenshipId;
 
-    public Integer citizenshipCode;
+    public String citizenshipCode;
 
     public String citizenshipName;
 
@@ -133,11 +133,11 @@ public class UserView {
         this.docName = docName;
     }
 
-    public Integer getCitizenshipCode() {
+    public String getCitizenshipCode() {
         return citizenshipCode;
     }
 
-    public void setCitizenshipCode(Integer citizenshipCode) {
+    public void setCitizenshipCode(String citizenshipCode) {
         this.citizenshipCode = citizenshipCode;
     }
 

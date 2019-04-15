@@ -20,7 +20,7 @@ public class UserFilterView {
 
     public Integer docCode;
 
-    public Integer citizenShipCode;
+    public String citizenShipCode;
 
     public UserFilterView() {
     }
@@ -73,11 +73,11 @@ public class UserFilterView {
         this.docCode = docCode;
     }
 
-    public Integer getCitizenShipCode() {
+    public String getCitizenShipCode() {
         return citizenShipCode;
     }
 
-    public void setCitizenShipCode(Integer citizenShipCode) {
+    public void setCitizenShipCode(String citizenShipCode) {
         this.citizenShipCode = citizenShipCode;
     }
 

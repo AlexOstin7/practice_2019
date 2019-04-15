@@ -17,7 +17,7 @@ public class Country {
     @Column(name = "version")
     private Integer version;
     @Column(name = "code")
-    private Integer code;
+    private String code;
     @Column(name = "name")
     private String name;
 
@@ -25,8 +25,7 @@ public class Country {
     @JoinTable (name="country_doc",
             joinColumns=@JoinColumn (name="country_id"),
             inverseJoinColumns=@JoinColumn(name="doc_id"))
-    //@JsonBackReference
-    @JsonManagedReference
+
     private List<Doc> docs;
 
     public Country() {
@@ -40,11 +39,11 @@ public class Country {
         this.id = id;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

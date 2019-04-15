@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
             view.possition = p.getPossition();
             view.docCode = p.getDoc().getCode();
            // view.citizenShipCode = p.getDoc().getCountries().iterator().next().getCode();
-            view.citizenShipCode = p.getDoc().getCountries().get(0).getCode();
+            view.setCitizenShipCode(p.getDoc().getCountries().get(0).getCode());
 
             log.info("after filter " + view.toString());
 

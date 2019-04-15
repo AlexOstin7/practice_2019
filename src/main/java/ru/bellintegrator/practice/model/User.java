@@ -31,7 +31,7 @@ public class User {
     private Date docDate;
     @Column(name = "phone")
     @Size(min = 5, max = 20)
-    private Integer phone;
+    private String phone;
     @Column(name = "is_identified")
     private Boolean isIdentified;
 
@@ -102,11 +102,11 @@ public class User {
         this.docDate = docDate;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

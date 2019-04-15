@@ -12,9 +12,9 @@ public class Country {
     @Version
     @Column(name = "version")
     private Integer version;
-    @Column(name = "code")
+    @Column(name = "code", length = 20)
     private String code;
-    @Column(name = "name")
+    @Column(name = "name", length = 50)
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY)

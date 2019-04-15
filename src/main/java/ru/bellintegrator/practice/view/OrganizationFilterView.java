@@ -5,7 +5,7 @@ public class OrganizationFilterView {
 
     public String name;
 
-    public Integer inn;
+    public String inn;
 
     public Boolean isActive;
 
@@ -17,11 +17,11 @@ public class OrganizationFilterView {
         this.name = name;
     }
 
-    public Integer getInn() {
+    public String getInn() {
         return inn;
     }
 
-    public void setInn(Integer inn) {
+    public void setInn(String inn) {
         this.inn = inn;
     }
 
@@ -37,7 +37,7 @@ public class OrganizationFilterView {
 
     }
 
-    public OrganizationFilterView(String name, Integer inn, Boolean isActive) {
+    public OrganizationFilterView(String name, String inn, Boolean isActive) {
         this.name = name;
         this.inn = inn;
         this.isActive = isActive;

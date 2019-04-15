@@ -80,7 +80,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     @Transactional
     public void updateOrganization(OrganizationView view) {
         if (Strings.isNullOrEmpty(view.getId()) || Strings.isNullOrEmpty(view.getName())
-                || Strings.isNullOrEmpty(view.getFullName()) || view.getInn() < 0
+                || Strings.isNullOrEmpty(view.getFullName()) || Strings.isNullOrEmpty(view.getInn())
                 || view.getKpp() < 0 || Strings.isNullOrEmpty(view.getAddress())
         ) {
             throw new CustomErrorException("Не заполнены обязательные поля* ");
@@ -108,7 +108,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     @Transactional
     public void add(OrganizationView view) {
         log.info("view {} " + view.toString());
-        if (Strings.isNullOrEmpty(view.getName()) || Strings.isNullOrEmpty(view.getFullName()) || view.getInn() < 0
+        if (Strings.isNullOrEmpty(view.getName()) || Strings.isNullOrEmpty(view.getFullName()) || Strings.isNullOrEmpty(view.getInn())
                 || view.getKpp() < 0 || Strings.isNullOrEmpty(view.getAddress())
         ) {
             throw new CustomErrorException("Не заполнены обязательные поля* ");

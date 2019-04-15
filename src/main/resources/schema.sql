@@ -12,11 +12,11 @@ CREATE TABLE IF NOT EXISTS organization (
 );
 
 CREATE TABLE IF NOT EXISTS office (
-    id         INTEGER  PRIMARY KEY AUTO_INCREMENT,
+    id          INTEGER  PRIMARY KEY AUTO_INCREMENT,
     version     INTEGER NOT NULL,
-    name       VARCHAR(50),
-    address    VARCHAR(250),
-    phone      VARCHAR(50),
+    name        VARCHAR(50),
+    address     VARCHAR(250),
+    phone       VARCHAR(50),
     is_active   BOOLEAN,
     org_id      INTEGER,
 CONSTRAINT Organization_FKEY FOREIGN KEY(org_id) REFERENCES PUBLIC.Organization (id) ON DELETE CASCADE

@@ -18,7 +18,7 @@ public class UserFilterView {
 
     public Integer officeId;
 
-    public Integer docCode;
+    public String docCode;
 
     public String citizenShipCode;
 
@@ -65,11 +65,11 @@ public class UserFilterView {
         this.officeId = officeId;
     }
 
-    public Integer getDocCode() {
+    public String getDocCode() {
         return docCode;
     }
 
-    public void setDocCode(Integer docCode) {
+    public void setDocCode(String docCode) {
         this.docCode = docCode;
     }
 

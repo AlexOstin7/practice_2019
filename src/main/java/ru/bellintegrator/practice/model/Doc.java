@@ -17,7 +17,7 @@ public class Doc {
     @Column(name = "version")
     private Integer version;
     @Column(name = "code")
-    private Integer code;
+    private String code;
     @Column(name = "name")
     private String name;
 
@@ -29,18 +29,17 @@ public class Doc {
     @JoinTable(name="country_doc",
             joinColumns=@JoinColumn(name="doc_id"),
             inverseJoinColumns=@JoinColumn(name="country_id"))
-    @JsonBackReference
     private List<Country> countries;
 
     public Doc() {
     }
 
-    public Doc(Integer code, String name) {
+    public Doc(String code, String name) {
         this.code = code;
         this.name = name;
     }
 
-    public Doc(Integer code, String name, List<Country> countries) {
+    public Doc(String code, String name, List<Country> countries) {
         this.code = code;
         this.name = name;
         this.countries = countries;
@@ -54,11 +53,11 @@ public class Doc {
         this.id = id;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

@@ -116,7 +116,7 @@ public class UserDAOImpl implements UserDAO {
             objConjunction.add(Restrictions.like("possition", "%" + userFilterView.getPossition() + "%").ignoreCase());
         }
         if (userFilterView.getDocCode() != null) {
-            objConjunction.add((Restrictions.eq("doc.code", userFilterView.getDocCode().intValue())));
+            objConjunction.add((Restrictions.eq("doc.code", userFilterView.getDocCode())));
         }
         if (userFilterView.getCitizenShipCode() != null) {
             objConjunction.add(Restrictions.eq("country.code", userFilterView.citizenShipCode));

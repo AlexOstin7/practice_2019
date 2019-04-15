@@ -27,7 +27,7 @@ public class UserView {
 
     public Integer docId;
 
-    public Integer docCode;
+    public String docCode;
 
     public String docName;
 
@@ -117,11 +117,11 @@ public class UserView {
         this.officeId = officeId;
     }
 
-    public Integer getDocCode() {
+    public String getDocCode() {
         return docCode;
     }
 
-    public void setDocCode(Integer docCode) {
+    public void setDocCode(String docCode) {
         this.docCode = docCode;
     }
 

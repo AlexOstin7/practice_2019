@@ -21,7 +21,6 @@ public class Country {
     @JoinTable (name="country_doc",
             joinColumns=@JoinColumn (name="country_id"),
             inverseJoinColumns=@JoinColumn(name="doc_id"))
-
     private List<Doc> docs;
 
     public Country() {

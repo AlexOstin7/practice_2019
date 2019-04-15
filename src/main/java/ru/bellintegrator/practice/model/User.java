@@ -2,7 +2,6 @@ package ru.bellintegrator.practice.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -14,22 +13,21 @@ public class User {
     @Version
     @Column(name = "version")
     private Integer version;
-    @Column(name = "first_name")
+    @Column(name = "first_name", length = 50)
     @NotNull
     private String firstName;
-    @Column(name = "second_name")
+    @Column(name = "second_name", length = 50)
     private String secondName;
-    @Column(name = "middle_name")
+    @Column(name = "middle_name", length = 50)
     private String middleName;
-    @Column(name = "possition")
+    @Column(name = "possition", length = 50)
     @NotNull
     private String possition;
-    @Column(name = "doc_number")
+    @Column(name = "doc_number", length = 20)
     private String docNumber;
     @Column(name = "doc_date")
     private Date docDate;
-    @Column(name = "phone")
-    @Size(min = 5, max = 20)
+    @Column(name = "phone", length = 20)
     private String phone;
     @Column(name = "is_identified")
     private Boolean isIdentified;

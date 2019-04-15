@@ -2,7 +2,6 @@ package ru.bellintegrator.practice.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -14,25 +13,22 @@ public class Organization {
     @Version
     @Column(name = "version")
     private Integer version;
-    @Column(name = "name")
+    @Column(name = "name", length = 50)
     @NotNull
     private String name;
-    @Column(name = "full_name")
+    @Column(name = "full_name", length = 250)
     @NotNull
     private String fullName;
-    @Column(name = "inn")
+    @Column(name = "inn", length = 10)
     @NotNull
-    @Size(min = 12, max = 12)
     private String inn;
-    @Column(name = "kpp")
+    @Column(name = "kpp", length = 9)
     @NotNull
-    @Size(min = 9, max = 9)
     private String kpp;
-    @Column(name = "address")
+    @Column(name = "address", length = 250)
     @NotNull
     private String address;
-    @Column(name = "phone")
-    @Size(min = 5, max = 20)
+    @Column(name = "phone", length = 20)
     private String phone;
     @Column(name = "is_active")
     private Boolean isActive;

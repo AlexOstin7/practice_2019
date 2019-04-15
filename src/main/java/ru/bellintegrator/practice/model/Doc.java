@@ -12,9 +12,9 @@ public class Doc {
     @Version
     @Column(name = "version")
     private Integer version;
-    @Column(name = "code")
+    @Column(name = "code", length = 20)
     private String code;
-    @Column(name = "name")
+    @Column(name = "name", length = 250)
     private String name;
 
     @OneToMany(mappedBy = "doc", cascade = CascadeType.ALL, orphanRemoval = true)

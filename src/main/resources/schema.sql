@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS country (
     CONSTRAINT PK_COUNTRY_ID PRIMARY KEY (id)
 );
 
-create table country_doc (
+CREATE TABLE IF NOT EXISTS country_doc (
     id          INTEGER  PRIMARY KEY AUTO_INCREMENT,
     version     INTEGER NOT NULL,
     country_id  INTEGER  NOT NULL,

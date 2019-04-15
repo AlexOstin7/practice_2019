@@ -1,11 +1,5 @@
 package ru.bellintegrator.practice.model;
 
-//import com.fasterxml.jackson.annotation.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,10 +34,7 @@ public class Office {
     @OneToMany(mappedBy = "office", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<User> users;
 
-    public Office(String name, String address, Integer phone, Boolean isActive) {
-    }
-
-    public Office(String name, String address, Integer phone, Boolean isActive, Integer orgId) {
+    public Office() {
     }
 
     public Integer getId() {
@@ -106,8 +97,9 @@ public class Office {
         getUsers().add(user);
         user.setOffice(this);
     }
-
-    public Office() {
+    public void removeUser(User user) {
+        getUsers().remove(user);
+        user.setOffice(null);
     }
 
     @Override

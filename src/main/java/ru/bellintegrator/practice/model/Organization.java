@@ -1,23 +1,13 @@
 package ru.bellintegrator.practice.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.hibernate.validator.constraints.Range;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
-import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 @Entity
 @Table(name = "organization")
-//@JsonAutoDetect(fieldVisibility = ANY, getterVisibility = NONE, setterVisibility = NONE)
 public class Organization {
-    private static final long serialVersionUID = -123451868897895L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -49,6 +39,19 @@ public class Organization {
 
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Office> offices;
+
+    public Organization() {
+    }
+
+    public Organization(String name, String fullName, String inn, String kpp, String address, String phone, Boolean isActive) {
+        this.name = name;
+        this.fullName = fullName;
+        this.inn = inn;
+        this.kpp = kpp;
+        this.address = address;
+        this.phone = phone;
+        this.isActive = isActive;
+    }
 
     public Integer getId() {
         return id;
@@ -114,27 +117,17 @@ public class Organization {
         this.isActive = isActive;
     }
 
+    public void setOffice(List<Office> offices) {
+        this.offices = offices;
+    }
+
+    public void addOffice(Office office) {
+        offices.add(office);
+        office.setOrganization(this);
+    }
+
     public void removeOffice(Office office) {
         office.setOrganization(null);
-    }
-
-    public Organization() {
-    }
-
-    public Organization(String name, String inn, Boolean isActive) {
-        this.name = name;
-        this.inn = inn;
-        this.isActive = isActive;
-    }
-
-    public Organization(String name, String fullName, String inn, String kpp, String address, String phone, Boolean isActive) {
-        this.name = name;
-        this.fullName = fullName;
-        this.inn = inn;
-        this.kpp = kpp;
-        this.address = address;
-        this.phone = phone;
-        this.isActive = isActive;
     }
 
 

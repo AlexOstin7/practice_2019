@@ -1,8 +1,5 @@
 package ru.bellintegrator.practice.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,7 +18,6 @@ public class Doc {
     private String name;
 
     @OneToMany(mappedBy = "doc", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
     private List<User> users;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -31,17 +27,6 @@ public class Doc {
     private List<Country> countries;
 
     public Doc() {
-    }
-
-    public Doc(String code, String name) {
-        this.code = code;
-        this.name = name;
-    }
-
-    public Doc(String code, String name, List<Country> countries) {
-        this.code = code;
-        this.name = name;
-        this.countries = countries;
     }
 
     public Integer getId() {
@@ -78,12 +63,10 @@ public class Doc {
 
     public void addUser(User user) {
         getUsers().add(user);
-        //car.setOwner(this);
         user.setDoc(this);
     }
     public void removeUser(User user) {
         getUsers().remove(user);
-       // car.setOwner(null);
         user.setDoc(null);
     }
 

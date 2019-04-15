@@ -8,7 +8,6 @@ import java.util.Date;
 @Entity
 @Table(name = "user")
 public class User {
-    private static final long serialVersionUID = -123453L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -43,6 +42,9 @@ public class User {
     @JoinColumn(name = "doc_id")
     private Doc doc;
 
+    public User() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -65,9 +67,6 @@ public class User {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
-    }
-
-    public User() {
     }
 
     public String getMiddleName() {

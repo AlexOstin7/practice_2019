@@ -17,7 +17,7 @@ public class OfficeView {
 
     private String address;
 
-    private Integer phone;
+    private String phone;
 
     private Boolean isActive;
 
@@ -47,11 +47,11 @@ public class OfficeView {
         this.address = address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -74,7 +74,7 @@ public class OfficeView {
     public OfficeView() {
     }
 
-    public OfficeView(String name, String address, Integer phone, Boolean isActive, Integer orgId) {
+    public OfficeView(String name, String address, String phone, Boolean isActive, Integer orgId) {
         this.name = name;
         this.address = address;
         this.phone = phone;

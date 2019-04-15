@@ -10,7 +10,7 @@ public class OfficeFilterView {
 
     private String name;
 
-    private Integer phone;
+    private String phone;
 
     private Boolean isActive;
 
@@ -31,7 +31,7 @@ public class OfficeFilterView {
         return name;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -47,7 +47,7 @@ public class OfficeFilterView {
         this.name = name;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

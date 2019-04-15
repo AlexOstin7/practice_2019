@@ -1,14 +1,9 @@
 package ru.bellintegrator.practice.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -42,18 +37,11 @@ public class User {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "office_id")
-//    @JsonManagedReference
     private Office office;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doc_id")
-//    @JsonManagedReference
     private Doc doc;
-
-   // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-   // @JsonBackReference
-    //private List<Country> countries;
-
 
     public Integer getId() {
         return id;

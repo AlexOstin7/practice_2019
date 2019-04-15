@@ -13,11 +13,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "office")
-//@JsonIgnoreProperties(ignoreUnknown = true)
-//@JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class Office {
-    private static final long serialVersionUID = -123452797979679L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -32,7 +29,7 @@ public class Office {
     private String address;
     @Size(min = 5, max = 20)
     @Column(name = "phone")
-    private Integer phone;
+    private String phone;
     @Column(name = "is_active")
     private Boolean isActive;
 
@@ -73,11 +70,11 @@ public class Office {
         this.address = address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

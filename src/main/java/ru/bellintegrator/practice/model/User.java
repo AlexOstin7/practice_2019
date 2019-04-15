@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,12 +21,14 @@ public class User {
     @Column(name = "version")
     private Integer version;
     @Column(name = "first_name")
+    @NotNull
     private String firstName;
     @Column(name = "second_name")
     private String secondName;
     @Column(name = "middle_name")
     private String middleName;
     @Column(name = "possition")
+    @NotNull
     private String possition;
     @Column(name = "doc_number")
     private Integer docNumber;

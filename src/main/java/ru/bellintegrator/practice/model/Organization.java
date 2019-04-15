@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +25,21 @@ public class Organization {
     @Column(name = "version")
     private Integer version;
     @Column(name = "name")
+    @NotNull
     private String name;
     @Column(name = "full_name")
+    @NotNull
     private String fullName;
     @Column(name = "inn")
+    @NotNull
     @Size(min = 12, max = 12)
     private String inn;
     @Column(name = "kpp")
+    @NotNull
     @Size(min = 9, max = 9)
     private String kpp;
     @Column(name = "address")
+    @NotNull
     private String address;
     @Column(name = "phone")
     @Size(min = 5, max = 20)

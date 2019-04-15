@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -24,8 +25,10 @@ public class Office {
     @Column(name = "version")
     private Integer version;
     @Column(name = "name")
+    @NotNull
     private String name;
     @Column(name = "address")
+    @NotNull
     private String address;
     @Size(min = 5, max = 20)
     @Column(name = "phone")
@@ -35,11 +38,9 @@ public class Office {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "org_id")
-//    @JsonManagedReference
     private Organization organization;
 
     @OneToMany(mappedBy = "office", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonBackReference
     private List<User> users;
 
     public Office(String name, String address, Integer phone, Boolean isActive) {
